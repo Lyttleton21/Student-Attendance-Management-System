@@ -10,3 +10,16 @@ header{
     z-index: 1;
     margin-top: 55px;
 }
+.hero{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: -40px;
+}
+.hero p{
+    font-weight: bold;
+}
+@media screen and (max-width: 600px) {
+    .hero h3 {
+      font-size: 50px;
+    }
+  }
