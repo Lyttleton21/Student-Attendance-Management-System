@@ -8,6 +8,7 @@ header{
     position: relative;
     overflow: hidden;
     z-index: 1;
+    right: 0px;
     margin-top: 55px;
 }
 .hero{
