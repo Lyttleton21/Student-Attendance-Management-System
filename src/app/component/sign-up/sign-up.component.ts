@@ -1,4 +1,6 @@
 import { Component, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
+import { StudentService } from 'src/app/service/student.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -14,20 +16,49 @@ export class SignUpComponent implements OnInit {
   state!:string
   gender!: string
   password!: string
-  constructor() { }
+
+
+  constructor(private studentService:StudentService,
+    private router:Router) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(){
-    console.log("Faculty:",this.faculty, 
-    "firstName:",this.firstName, 
-    "lastName:",this.lastName, 
-    "Password:",this.password,  
-    "Email:",this.email,    
-    "Gender:",this.gender,  
-    "State:",this.state,  
-    "Department:",this.department)
+    let data ={
+      firstName:this.firstName,
+      lastName:this.lastName,
+      email:this.email,
+      password:this.password,
+      faculty:this.faculty,
+      department:this.department,
+      gender:this.gender,
+      state:this.state
+    }
+    //console.log(data);
+    this.studentService.createStudent(data).subscribe((response) => {
+      if(response.status == 200){
+        alert(response.message);
+        this.router.navigate(['home']);
+      }else{
+        alert(response.message);
+      }
+    });
+  }
+
+  canExist(){
+    if(this.department ||
+      this.email ||
+      this.faculty ||
+      this.firstName ||
+      this.gender ||
+      this.lastName ||
+      this.password ||
+      this.state){
+        return confirm('You have an unsave change. Do you really want discard these change?');
+    }else{
+      return true;
+    }
   }
 
 }

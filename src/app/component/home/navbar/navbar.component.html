@@ -10,16 +10,16 @@ fixed-top">
           <li class="nav-item">
             <a class="nav-link active" 
             aria-current="page" 
-            routerLinkActive="success"
-            routerLink="#">
-                Attendance  
+            routerLinkActive="text-success"
+            routerLink="/profile">
+                My-Profile  
             </a>
           </li>
         </ul>
       </div>
       <div class="d-flex">
         <a class="btn btn-outline-success mx-2" 
-        (click)="isOnline()">
+        (click)="isOnline()" routerLink="/login">
             <ng-container *ngIf="this.login">
                 Log-out
             </ng-container>

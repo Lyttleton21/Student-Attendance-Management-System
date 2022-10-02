@@ -1,0 +1,47 @@
+<div>
+    <app-navbar></app-navbar>
+</div>
+<div class="bg-light" 
+style="margin-top: 60px;">
+    <div class="container px-5 py-2">
+        <div>
+            <div class="text-center">
+                <h3>
+                    Student Profile
+                </h3>
+            </div>
+            <div class="card">
+                <div class="text-center card-header">
+                    <h5 class="card-title">
+                        Welcome Back {{studentdetails.RESULT.firstName}}
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            First Name:{{studentdetails.RESULT.firstName}}
+                        </li>
+                        <li class="list-group-item">
+                            Last Name:{{studentdetails.RESULT.lastName}}
+                        </li>
+                        <li class="list-group-item">
+                            Email: {{studentdetails.RESULT.email}}
+                        </li>
+                        <li class="list-group-item">
+                            Faculty: {{studentdetails.RESULT.faculty}}
+                        </li>
+                        <li class="list-group-item">
+                            Department: {{studentdetails.RESULT.department}}
+                        </li>
+                        <li class="list-group-item">
+                            Gender: {{studentdetails.RESULT.gender}}
+                        </li>
+                        <li class="list-group-item">
+                            State: {{studentdetails.RESULT.state}}
+                        </li>
+                      </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
