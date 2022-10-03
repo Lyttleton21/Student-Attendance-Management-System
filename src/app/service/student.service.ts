@@ -18,4 +18,8 @@ export class StudentService {
   login(data:any):Observable<any>{
     return this.http.post(myConfigs.apiURL+'/api/login', data);
   }
+
+  markAttendance(data: any):Observable<any>{
+    return this.http.post(myConfigs.apiURL+'/mark_attendance', data);
+  }
 }

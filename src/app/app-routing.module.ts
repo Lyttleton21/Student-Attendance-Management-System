@@ -1,5 +1,7 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
+import { AdminSignupComponent } from './admin/admin-signup/admin-signup.component';
 import { HomeComponent } from './component/home/home.component';
 import { LoginComponent } from './component/login/login.component';
 import { ProfileComponent } from './component/profile/profile.component';
@@ -34,6 +36,16 @@ const routes: Routes = [
     title:'My-Profile',
     canActivate:[LoginDetailsService],
     component: ProfileComponent
+  },
+  {
+    path:'admin_home',
+    title:'Admin',
+    component:AdminHomeComponent
+  },
+  {
+    path:'admin_sign-up',
+    title:'Create Admin Account',
+    component:AdminSignupComponent
   }
 ];
 

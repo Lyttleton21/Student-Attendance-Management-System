@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginDetailsService } from 'src/app/service/login-details.service';
+import { StudentService } from 'src/app/service/student.service';
 import { Student } from '../models/student';
 
 @Component({
@@ -9,11 +10,43 @@ import { Student } from '../models/student';
 })
 export class ProfileComponent implements OnInit {
   studentdetails!: any;
+  firstName!: string;
+  lastName!: string;
+  faculty!: string;
+  department!: string;
 
-  constructor(private loginDetailsService:LoginDetailsService) { }
+  checked: boolean = false;
+
+  constructor(private loginDetailsService:LoginDetailsService,
+    private studentService:StudentService) { }
 
   ngOnInit(): void {
     this.studentdetails = this.loginDetailsService.getLoginDetails();
+    //console.log(this.studentdetails);
   } 
 
+  changeChecked(){
+    this.checked = true;
+  }
+
+  markAttendance(){
+    var month =  new Date().getMonth() + 1;
+   let data = {
+    firstName:this.studentdetails.RESULT.firstName,
+    lastName:this.studentdetails.RESULT.lastName,
+    faculty:this.studentdetails.RESULT.faculty,
+    department:this.studentdetails.RESULT.department,
+    date:(new Date().getFullYear() +'-'+ month +'-'+  new Date().getDate())
+   }
+   this.studentService.markAttendance(data).subscribe((response) => {
+    if(response.status == 200){
+      alert(response.message);
+    }else{
+      alert(response.message);
+    }
+   });
+   
+  }
+ 
 }
+

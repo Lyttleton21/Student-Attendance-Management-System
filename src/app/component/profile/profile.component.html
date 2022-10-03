@@ -39,7 +39,28 @@ style="margin-top: 60px;">
                         <li class="list-group-item">
                             State: {{studentdetails.RESULT.state}}
                         </li>
-                      </ul>
+                    </ul>
+                    <div class="card-footer">
+                        <div>
+                            <h6>
+                                Mark Attendance
+                            </h6>
+                        </div>
+                        <form class="row"
+                        (ngSubmit)="markAttendance()"
+                        #markattendance="ngForm">
+                            <div class="col-1">
+                                <input type="checkbox" 
+                                required (change)="changeChecked()">
+                            </div>
+                            <div class="col-2" *ngIf="checked === true">
+                                <button class="btn btn-success"
+                                type="submit" style="width: 100%;">
+                                    Send
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

@@ -11,6 +11,7 @@ import { SignUpComponent } from './component/sign-up/sign-up.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './component/login/login.component';
 import { ProfileComponent } from './component/profile/profile.component';
+import { AdminModule } from './admin/admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -20,13 +21,14 @@ import { ProfileComponent } from './component/profile/profile.component';
     HeaderComponent,
     SignUpComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]
