@@ -18,11 +18,27 @@ export class AdminNavComponent implements OnInit {
   }
 
   toAdminHome(){
-    this.router.navigate(['admin_home']);
+    this.router.navigate(['admin']);
   }
 
   toSignUp(){
-    this.router.navigate(['admin_sign-up']);
+    this.router.navigate(['admin/sign-up']);
+  }
+
+  toAttendance_list(){
+    this.router.navigate(['admin/attendance_list']);
+  }
+
+  toLogin(){
+    this.router.navigate(['admin/login']);
+  }
+
+  toAdd_student(){
+    this.router.navigate(['admin/add_student']);
+  }
+
+  toAllStudent(){
+    this.router.navigate(['admin/all_student']);
   }
 
 }

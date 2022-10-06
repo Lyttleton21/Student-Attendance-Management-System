@@ -1,0 +1,89 @@
+
+<main>
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+        <div class="col col-md-10 col-lg-8">
+            <div class="card">
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <div class="row">
+                            <div class="col-3 col-lg-4  text-end">
+                                <strong>First Name:</strong>
+                            </div> 
+                            <div class="col">
+                                <p>
+                                    {{student.firstName | titlecase}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="row">
+                            <div class="col-3 col-lg-4 text-end">
+                                <strong>Last Name:</strong>
+                            </div> 
+                            <div class="col">
+                                <p>
+                                    {{student.lastName | titlecase}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <div class="row">
+                            <div class="col-3 col-lg-3  text-end">
+                                <strong>Email:</strong>
+                            </div> 
+                            <div class="col">
+                                <p>
+                                    {{student.email}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="row">
+                            <div class="col-3 col-lg-4 text-end">
+                                <strong>Faculty:</strong>
+                            </div> 
+                            <div class="col">
+                                <p>
+                                    {{student.faculty | titlecase}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <div class="row">
+                            <div class="col-4 col-lg-4  text-end">
+                                <strong>Department:</strong>
+                            </div> 
+                            <div class="col">
+                                <p>
+                                    {{student.department | titlecase}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="row">
+                            <div class="col-3 col-lg-4 text-end">
+                                <strong>Gender:</strong>
+                            </div> 
+                            <div class="col">
+                                <p>
+                                    {{student.gender}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</main>

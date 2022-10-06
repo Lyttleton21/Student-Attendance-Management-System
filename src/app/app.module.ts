@@ -13,6 +13,7 @@ import { LoginComponent } from './component/login/login.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { AdminModule } from './admin/admin/admin.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
