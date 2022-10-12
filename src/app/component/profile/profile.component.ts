@@ -26,7 +26,7 @@ export class ProfileComponent implements OnInit {
   } 
 
   changeChecked(){
-    this.checked = true;
+    this.checked = !this.checked;
   }
 
   markAttendance(){
