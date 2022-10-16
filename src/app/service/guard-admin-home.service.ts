@@ -15,6 +15,7 @@ export class GuardAdminHomeService implements CanActivate{
   canActivate(route: ActivatedRouteSnapshot, 
     state: RouterStateSnapshot)
     : boolean{
+      // if isAuthenticated() === true
     if(this.authService.isAuthenticated()){
       return true;
     }else{

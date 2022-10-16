@@ -20,7 +20,7 @@ logOut:any;
   canActivate(route: ActivatedRouteSnapshot, 
     state: RouterStateSnapshot
     ): boolean{
-    if(this.authService.isAuthenticated() === true){
+    if(this.authService.isAuthenticated()){
       return true;
     }else{
       this.router.navigate(['login']);

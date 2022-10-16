@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-admin-nav',
@@ -8,7 +9,8 @@ import { Router } from '@angular/router';
 })
 export class AdminNavComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,
+    public authService:AuthService) { }
 
   ngOnInit(): void {
   }
@@ -39,6 +41,11 @@ export class AdminNavComponent implements OnInit {
 
   toAllStudent(){
     this.router.navigate(['admin/all_student']);
+  }
+
+  logOutBtn(){
+    window.location.reload();
+    this.router.navigate(['home']);
   }
 
 }
