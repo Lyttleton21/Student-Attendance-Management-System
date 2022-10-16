@@ -17,21 +17,23 @@ fixed-top">
           </li>
         </ul>
       </div>
-      <div class="d-flex">
+      <div class="d-flex" 
+      *ngIf="this.isLoggin === false"
+      (click)="isOnline()">
         <a class="btn btn-outline-success mx-2" 
-        (click)="isOnline()" routerLink="/login">
-            <ng-container *ngIf="this.login">
-                Log-out
-            </ng-container>
-            <ng-container *ngIf="!this.login">
+         routerLink="/login">
                 Log-in
-            </ng-container>
         </a>
         <a class="btn btn-success"
         routerLink="/sign-up">
           Sign-up
         </a>
       </div>
+      <div class="d-flex" *ngIf="this.isLoggin === true">
+        <a class="btn btn-outline-success mx-2">
+          Log-Out
+        </a>
+      </div>  
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
