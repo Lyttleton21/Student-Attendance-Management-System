@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/service/auth.service';
 import { LoginDetailsService } from 'src/app/service/login-details.service';
 import { StudentService } from 'src/app/service/student.service';
 import { Student } from '../models/student';
@@ -18,7 +20,9 @@ export class ProfileComponent implements OnInit {
   checked: boolean = false;
 
   constructor(private loginDetailsService:LoginDetailsService,
-    private studentService:StudentService) { }
+    private studentService:StudentService,
+    private router:Router,
+    private authService:AuthService) { }
 
   ngOnInit(): void {
     this.studentdetails = this.loginDetailsService.getLoginDetails();
@@ -46,6 +50,11 @@ export class ProfileComponent implements OnInit {
     }
    });
    
+  }
+  logOut(){
+    this.loginDetailsService.logUserOut();
+    this.authService.logout();
+    this.router.navigate(['home']);
   }
  
 }

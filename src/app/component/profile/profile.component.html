@@ -1,8 +1,8 @@
-<div>
+<div style="margin-bottom: 60px;">
     <app-navbar></app-navbar>
 </div>
 <div class="bg-light" 
-style="margin-top: 60px;">
+style="height: 100vh;">
     <div class="container px-5 py-2">
         <div>
             <div class="text-center">
@@ -46,20 +46,28 @@ style="margin-top: 60px;">
                                 Mark Attendance
                             </h6>
                         </div>
-                        <form class="row"
-                        (ngSubmit)="markAttendance()"
-                        #markattendance="ngForm">
-                            <div class="col-1">
-                                <input type="checkbox" 
-                                required (change)="changeChecked()">
-                            </div>
-                            <div class="col-2" *ngIf="checked === true">
-                                <button class="btn btn-success"
-                                type="submit" style="width: 100%;">
-                                    Send
+                        <div class="row">
+                            <form class="col-8"
+                            (ngSubmit)="markAttendance()"
+                            #markattendance="ngForm">
+                                <div class="col-1">
+                                    <input type="checkbox"
+                                    (change)="changeChecked()">
+                                </div>
+                                <div class="col-sm-4 " *ngIf="checked === true">
+                                    <button class="btn btn-success"
+                                    type="submit" style="width: 100%;">
+                                        Send
+                                    </button>
+                                </div>
+                            </form>
+                            <div class="col-4">
+                                <button class="btn btn-danger"
+                                (click)="logOut()">
+                                    Log-Out
                                 </button>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>

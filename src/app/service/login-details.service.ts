@@ -1,6 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 
 @Injectable({
@@ -8,6 +7,7 @@ import { AuthService } from './auth.service';
 })
 export class LoginDetailsService implements CanActivate{
 loginDetails:any
+logOut:any;
 
   constructor(private authService:AuthService,
     private router:Router) { }
@@ -20,11 +20,16 @@ loginDetails:any
   canActivate(route: ActivatedRouteSnapshot, 
     state: RouterStateSnapshot
     ): boolean{
-    if(this.authService.isAuthenticated()){
+    if(this.authService.isAuthenticated() === true){
       return true;
     }else{
       this.router.navigate(['login']);
       return false;
     }
+  }
+
+  logUserOut(){
+    this.logOut = localStorage.removeItem('login');
+    return this.logOut;
   }
 }
