@@ -19,7 +19,7 @@ filterChange = new EventEmitter<string>();
 
 filterValueChange(){
   this.filterChange.emit(this.enterFilterValue);
-  console.log(this.enterFilterValue);
+  //console.log(this.enterFilterValue);
 }
 
 }
