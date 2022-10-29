@@ -1,27 +1,45 @@
-# Project
+NB: Functional Requirements
+The system must have 2 kinds of user:
+- Admin
+- Student
+TIP: Give each user a role_id:
+e.g. admin : 1, student : 2
+Then, use the role id to decide their permissions 
+e.g. if the user can add new student or not after login, e.t.c
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
 
-## Development server
+ADMIN
+1. Allow sign up as an admin
+- Input Fields: first name, last name, email, password, department, Faculty, contact no
+- Alert message to be displayed whether sign up is successful or not
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+2. Allow login as an admin
+Input Fields: email, password
 
-## Code scaffolding
+3. Add student into Database
+Input Fields: first name, last name email, 
+department and Faculty (these two fields should be pre-filled with the department and faculty of the admin that logged in)
+contact no, matric no.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+4. View all students
 
-## Build
+5. Allow admin to filter all students based on date, 
+- indicate whether a student is present or absent (using button or checkbox (true for present, false for absent))  for each date filtered by admin
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+6. Admin should be able to log out and return to the login page
 
-## Running unit tests
+USER
+1. Allow sign up as a student
+-  Input Fields: first name, last name, password, email,
+ department, Faculty (these two fields should be pre-filled in a select/dropdown field according to the entry made by the admins of each department)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Allow user to login
+Input Fields: email, password
 
-## Running end-to-end tests
+3. Attendance page
+- Display the Department and faculty of the student based on data fetched from database after log in.
+- allow user to select or use checkbox to indicate present
+- introduce a submit button to send the data to backend
+- feedback message must be displayed either failed or successful.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+4. user should be able to log out and return to the login page
